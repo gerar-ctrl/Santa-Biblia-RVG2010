@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santa Biblia Reina Valera Gómez 2010 (RVG2010) — Descarga Oficial</title>
+  <meta name="description" content="Descarga gratis la aplicación Santa Biblia Reina Valera Gómez 2010 (RVG2010) 100% sin conexión para Android (APK) y Windows (PC).">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <style>
+    :root {
+      --bg: #faf7f2;
+      --bg-alt: #f2ece1;
+      --surface: #ffffff;
+      --text: #231b14;
+      --text-secondary: #5a4b3c;
+      --text-muted: #7d6d5c;
+      --accent: #8b5a2b;
+      --accent-hover: #704620;
+      --accent-soft: rgba(139, 90, 43, 0.1);
+      --border: #e5dccd;
+      --android: #1b7f4c;
+      --android-hover: #14663c;
+      --windows: #1d5fa7;
+      --windows-hover: #154a84;
+      --shadow: 0 10px 30px rgba(35, 27, 20, 0.06);
+      --shadow-lg: 0 18px 42px rgba(35, 27, 20, 0.10);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+
+    .brand img {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 8px 16px;
+      border-radius: 999px;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent-hover);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 64px 0 56px;
+      text-align: center;
+      background: radial-gradient(circle at top center, rgba(139, 90, 43, 0.11), transparent 62%);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4.8vw, 3.35rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      max-width: 820px;
+      margin: 0 auto 18px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.1vw, 1.2rem);
+      color: var(--text-secondary);
+      max-width: 680px;
+      margin: 0 auto 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 26px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-android {
+      background: var(--android);
+      color: #ffffff;
+    }
+
+    .btn-android:hover {
+      background: var(--android-hover);
+    }
+
+    .btn-windows {
+      background: var(--windows);
+      color: #ffffff;
+    }
+
+    .btn-windows:hover {
+      background: var(--windows-hover);
+    }
+
+    .btn svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Sections */
+    section {
+      padding: 56px 0;
+    }
+
+    .section-alt {
+      background-color: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 40px;
+    }
+
+    .section-header h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.65rem, 3.2vw, 2.3rem);
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+    }
+
+    /* About card */
+    .about-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .about-box p {
+      color: var(--text-secondary);
+      font-size: 1.04rem;
+      margin-bottom: 14px;
+    }
+
+    .about-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat {
+      text-align: center;
+      padding: 12px 8px;
+      border-radius: 12px;
+      background: var(--bg);
+    }
+
+    .stat strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.55rem;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .stat span {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Features grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .feature-card p {
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* Downloads */
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 24px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .download-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .download-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .platform-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .platform-badge.android {
+      background: var(--android);
+    }
+
+    .platform-badge.windows {
+      background: var(--windows);
+    }
+
+    .platform-badge svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .download-card h3 {
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+
+    .download-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .download-card p {
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+    }
+
+    .download-steps {
+      list-style: none;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .download-steps li + li {
+      margin-top: 6px;
+    }
+
+    .download-card .btn {
+      width: 100%;
+    }
+
+    .github-note {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .github-note a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .github-note a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      background: var(--bg);
+    }
+
+    footer p + p {
+      margin-top: 6px;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 720px) {
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero {
+        padding: 44px 0 40px;
+      }
+
+      .about-box {
+        padding: 22px;
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#inicio">
+        <img src="/icons/icon-192.png" alt="Icono Santa Biblia RVG2010">
+        <span>Santa Biblia RVG2010</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#acerca">Acerca de</a>
+        <a href="#caracteristicas">Características</a>
+        <a href="#descargar" class="nav-cta">Descargar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container">
+        <div class="badge">100% Sin Conexión &bull; Gratis &bull; Android y Windows</div>
+        <h1>Santa Biblia Reina Valera Gómez 2010</h1>
+        <p class="hero-subtitle">
+          Una aplicación moderna, rápida y cómoda para leer y estudiar la Palabra de Dios en tu celular o computadora, sin necesidad de internet y sin publicidad.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-android" href="https://github.com/gerar-ctrl/Santa-Biblia-RVG2010/releases/download/v1.0.3/Santa-Biblia-RVG2010-1.0.3.apk">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0989L4.841 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3435-4.1021-2.6892-7.5743-6.1185-9.4396"/>
+            </svg>
+            <span>Descargar para Celular (APK)</span>
+          </a>
+
+          <a class="btn btn-windows" href="https://github.com/gerar-ctrl/Santa-Biblia-RVG2010/releases/download/v1.0.3/Santa-Biblia-RVG2010-Setup-1.0.0.exe">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+            </svg>
+            <span>Descargar para PC (Windows)</span>
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span>📱 Android APK v1.0.3 (4.6 MB)</span>
+          <span>💻 Windows 64-bit v1.0.0 (79.4 MB)</span>
+          <span>🔗 Descarga directa desde GitHub</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="acerca">
+      <div class="container">
+        <div class="section-header">
+          <h2>Acerca de la Aplicación</h2>
+          <p>Diseñada para una lectura serena, clara y profunda de las Sagradas Escrituras en cualquier momento y lugar.</p>
+        </div>
+
+        <div class="about-box">
+          <p>
+            <strong>Santa Biblia Reina Valera Gómez 2010 (RVG2010)</strong> es una aplicación gratuita pensada para quienes desean leer, consultar y estudiar la Biblia con total comodidad tanto en teléfono Android como en computadora con Windows.
+          </p>
+          <p>
+            Todo el texto bíblico completo, las referencias cruzadas, las citas del Antiguo Testamento y los subtítulos de pasajes están incluidos directamente dentro del instalador, por lo que funciona <strong>100% sin conexión a internet</strong> una vez instalada.
+          </p>
+
+          <div class="stats-row">
+            <div class="stat">
+              <strong>66</strong>
+              <span>Libros completos</span>
+            </div>
+            <div class="stat">
+              <strong>31.102</strong>
+              <span>Versículos offline</span>
+            </div>
+            <div class="stat">
+              <strong>10</strong>
+              <span>Temas de color</span>
+            </div>
+            <div class="stat">
+              <strong>50</strong>
+              <span>Tipografías</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="caracteristicas" class="section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Características Principales</h2>
+          <p>Herramientas prácticas para tu lectura diaria y estudio bíblico personal.</p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">📚</div>
+            <h3>Texto Completo 100% Sin Conexión</h3>
+            <p>Incluye los 66 libros y los 31.102 versículos de la Reina Valera Gómez 2010 listos para leer sin depender de internet ni datos móviles.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">❤️</div>
+            <h3>Palabras de Jesús en Rojo</h3>
+            <p>Edición Letra Roja activable desde ajustes, con más de 2.000 versículos del Nuevo Testamento destacados y adaptados a cada tema visual.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📖</div>
+            <h3>Referencias y Pasajes Paralelos</h3>
+            <p>Consulta citas del Antiguo Testamento, cumplimiento profético bidireccional, armonía de los Evangelios y temas doctrinales con vista previa instantánea.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>10 Temas y 50 Tipografías</h3>
+            <p>Personaliza la lectura con temas claros, sepia, oscuros y OLED puro, 50 fuentes, estilos de grosor/cursiva, tamaño de letra (14–32 px), interlineado y alineación.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📄</div>
+            <h3>Párrafo Continuo o Línea por Línea</h3>
+            <p>Cambia entre lectura fluida en párrafo continuo o versículo por versículo para estudio y memorización, con títulos de sección y numeración opcionales.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3>Buscador Bíblico Instantáneo</h3>
+            <p>Encuentra cualquier frase exacta o salta directamente a una cita (como <em>Juan 3:16</em>) filtrando por toda la Biblia, testamento o libro actual.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📘</div>
+            <h3>Modo Diccionario RAE</h3>
+            <p>Toca cualquier palabra del texto bíblico para abrir su definición oficial en la Real Academia Española con desambiguación gramatical contextual.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📲</div>
+            <h3>Selección Múltiple y Compartir</h3>
+            <p>Selecciona uno o varios versículos para copiarlos con su cita oficial RVG2010 o compartirlos directamente por WhatsApp y otras aplicaciones.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🔖</div>
+            <h3>Navegación Rápida y Memoria</h3>
+            <p>Selector ágil de libros, cuadrícula de capítulos, salto directo a versículo y guardado automático de tus ajustes y última lectura.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="descargar">
+      <div class="container">
+        <div class="section-header">
+          <h2>Descargar Instaladores</h2>
+          <p>Elige tu dispositivo para iniciar la descarga directa desde GitHub.</p>
+        </div>
+
+        <div class="download-grid">
+          <div class="download-card">
+            <div>
+              <div class="download-header">
+                <div class="platform-badge android" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0989L4.841 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3435-4.1021-2.6892-7.5743-6.1185-9.4396"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Celular / Tablet Android</h3>
+                  <div class="download-meta">Versión 1.0.3 &bull; APK &bull; 4.6 MB</div>
+                </div>
+              </div>
+              <p style="margin-top: 14px;">
+                Aplicación nativa para Android con interfaz móvil cómoda, ajustes en vivo y lectura completa sin conexión.
+              </p>
+              <ul class="download-steps" style="margin-top: 14px;">
+                <li>1. Descarga el archivo <strong>Santa-Biblia-RVG2010-1.0.3.apk</strong>.</li>
+                <li>2. Ábrelo desde tus descargas y acepta instalar apps de origen externo si tu teléfono lo solicita.</li>
+              </ul>
+            </div>
+
+            <a class="btn btn-android" href="https://github.com/gerar-ctrl/Santa-Biblia-RVG2010/releases/download/v1.0.3/Santa-Biblia-RVG2010-1.0.3.apk">
+              Descargar APK para Celular
+            </a>
+          </div>
+
+          <div class="download-card">
+            <div>
+              <div class="download-header">
+                <div class="platform-badge windows" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Computadora Windows (PC)</h3>
+                  <div class="download-meta">Versión 1.0.0 &bull; EXE 64-bit &bull; 79.4 MB</div>
+                </div>
+              </div>
+              <p style="margin-top: 14px;">
+                Instalador de escritorio para Windows con ventana dedicada, atajos de teclado y funcionamiento totalmente offline.
+              </p>
+              <ul class="download-steps" style="margin-top: 14px;">
+                <li>1. Descarga el instalador <strong>Santa-Biblia-RVG2010-Setup-1.0.0.exe</strong>.</li>
+                <li>2. Ejecútalo para instalar y crear el acceso directo en tu Escritorio y Menú Inicio.</li>
+              </ul>
+            </div>
+
+            <a class="btn btn-windows" href="https://github.com/gerar-ctrl/Santa-Biblia-RVG2010/releases/download/v1.0.3/Santa-Biblia-RVG2010-Setup-1.0.0.exe">
+              Descargar Instalador para PC
+            </a>
+          </div>
+        </div>
+
+        <p class="github-note">
+          Los instaladores oficiales están alojados en
+          <a href="https://github.com/gerar-ctrl/Santa-Biblia-RVG2010/releases/tag/v1.0.3" target="_blank" rel="noopener noreferrer">
+            GitHub Releases (gerar-ctrl/Santa-Biblia-RVG2010)
+          </a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Santa Biblia Reina Valera Gómez 2010 (RVG2010)</strong> &mdash; Diseñado por Gerardo Velázquez</p>
+      <p>
+        <a href="https://github.com/gerar-ctrl/Santa-Biblia-RVG2010" target="_blank" rel="noopener noreferrer">Ver proyecto en GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Limpiar cualquier Service Worker y caché antiguo de la versión web anterior
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (regs) {
+        regs.forEach(function (reg) { reg.unregister(); });
+      }).catch(function () {});
+    }
+    if ("caches" in window) {
+      caches.keys().then(function (keys) {
+        keys.forEach(function (key) { caches.delete(key); });
+      }).catch(function () {});
+    }
+  </script>
+</body>
+</html>

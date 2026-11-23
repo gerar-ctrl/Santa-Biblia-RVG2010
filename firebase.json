@@ -1,53 +1,14 @@
 {
   "hosting": {
-    "public": ".",
+    "public": "hosting",
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**",
-      "packaging/**",
-      "installers/**",
-      "README.md"
+      "**/node_modules/**"
     ],
     "headers": [
       {
-        "source": "/",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
-          }
-        ]
-      },
-      {
-        "source": "/index.html",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
-          }
-        ]
-      },
-      {
-        "source": "/**/*.html",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
-          }
-        ]
-      },
-      {
-        "source": "/app.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
-          }
-        ]
-      },
-      {
-        "source": "/styles.css",
+        "source": "**",
         "headers": [
           {
             "key": "Cache-Control",
@@ -67,19 +28,12 @@
             "value": "/"
           }
         ]
-      },
+      }
+    ],
+    "rewrites": [
       {
-        "source": "/manifest.json",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/manifest+json; charset=utf-8"
-          }
-        ]
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }
