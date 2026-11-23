@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="luz-clasico">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <title>Santa Biblia Reina Valera Gómez 2010 (RVG2010)</title>
+  <meta name="description" content="Lector moderno, accesible y offline de la Santa Biblia Reina Valera Gómez 2010 (RVG2010).">
+
+  <!-- Tailwind CSS CDN para diseño moderno y ágil -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            themeBg: 'var(--bg-primary)',
+            themeSurface: 'var(--bg-surface)',
+            themeText: 'var(--text-primary)',
+            themeMuted: 'var(--text-muted)',
+            themeAccent: 'var(--accent-color)',
+            themeBorder: 'var(--border-color)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fuentes de Google optimizadas (50 Tipografías de Lectura) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Baskervville:ital@0;1&family=Cardo:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Faustina:ital,wght@0,400;0,600;1,400&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=MedievalSharp&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Prata&family=Spectral:ital,wght@0,400;0,600;1,400&family=UnifrakturMaguntia&family=Vollkorn:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,600;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fira+Sans:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Karla:ital,wght@0,400;0,700;1,400&family=Lato:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;1,400&family=Open+Sans:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@400;500;600&family=PT+Sans:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600&family=Raleway:ital,wght@0,400;0,600;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;1,400&family=Rubik:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Urbanist:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inconsolata:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&family=Source+Code+Pro:wght@400;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap">
+
+  <!-- PWA / Instalador para Celular (Android / iOS) y PC -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#991b1b" id="metaThemeColor">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Biblia RVG2010">
+  <meta name="application-name" content="Biblia RVG2010">
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+
+  <!-- Estilos personalizados para Temas, Tipografías y Modos Bíblicos -->
+  <link rel="stylesheet" href="styles.css?v=20261123_01">
+</head>
+<body class="selection:bg-amber-500/20">
+
+  <!-- ======================================================================
+       BARRA SUPERIOR (DISEÑADO POR GERARDO VELÁZQUEZ)
+       ====================================================================== -->
+  <div class="top-designer-bar">
+    <div class="max-w-6xl mx-auto px-4 py-1.5 flex items-center justify-between text-xs">
+      <div class="flex items-center gap-1.5 font-medium">
+        <span class="opacity-80">Diseñado por</span>
+        <span class="font-bold text-[var(--text-primary)] tracking-wide">Gerardo Velázquez</span>
+      </div>
+      <button id="btnTopBarInstall" type="button" class="inline-flex items-center gap-1 font-semibold text-[var(--accent-color)] hover:underline transition" title="Instalar aplicación en celular o PC">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        </svg>
+        <span id="topBarInstallLabel">Instalar en Celular o PC</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       BARRA DE NAVEGACIÓN Y ACCIONES (HEADER)
+       ====================================================================== -->
+  <header class="app-header shadow-sm">
+    <div class="max-w-6xl mx-auto px-2 sm:px-4 h-16 flex items-center justify-between gap-1.5 sm:gap-2">
+      
+      <!-- Izquierda: Botón Drawer de Libros + Título de App / Ubicación -->
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0 min-w-0">
+        <button id="btnOpenNav" type="button" 
+                class="p-2 sm:px-3 sm:py-2 rounded-lg border border-[var(--border-color)] hover:border-[var(--accent-color)] hover:text-[var(--accent-color)] flex items-center gap-1.5 text-sm font-medium transition shrink-0"
+                title="Abrir selector de Libros y Capítulos">
+          <svg class="w-5 h-5 text-[var(--accent-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/>
+          </svg>
+          <span class="hidden md:inline font-semibold">Índice</span>
+        </button>
+
+        <!-- Selector rápido desplegable de Libro y Capítulo en la barra -->
+        <button id="btnQuickSelect" type="button"
+                class="flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-[var(--bg-primary)] border border-[var(--border-color)] hover:border-[var(--accent-color)] text-xs sm:text-sm font-semibold transition max-w-[125px] xs:max-w-[150px] sm:max-w-none"
+                title="Cambiar libro o capítulo rápidamente">
+          <span id="headerCurrentLocation" class="text-xs sm:text-base font-bold tracking-tight truncate">Génesis 1</span>
+          <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-70 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Centro: Navegación Rápida Anterior / Siguiente Capítulo -->
+      <div class="flex items-center gap-1 shrink-0">
+        <button id="btnHeaderPrev" type="button"
+                class="p-2 rounded-lg border border-[var(--border-color)] hover:border-[var(--accent-color)] hover:text-[var(--accent-color)] transition disabled:opacity-40 shrink-0"
+                title="Capítulo Anterior">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+
+        <!-- Salto directo a Capítulo (visible en tablet / desktop) -->
+        <div class="relative hidden sm:inline-block">
+          <select id="selectQuickChapter" 
+                  class="h-9 px-2 sm:px-2.5 text-xs sm:text-sm font-medium rounded-lg bg-[var(--bg-primary)] border border-[var(--border-color)] focus:outline-none focus:border-[var(--accent-color)] cursor-pointer"
+                  title="Ir a capítulo específico del libro actual">
+            <option value="">Capítulo...</option>
+          </select>
+        </div>
+
+        <!-- Salto directo a Versículo (visible en desktop) -->
+        <div class="relative hidden lg:inline-block">
+          <select id="selectQuickVerse" 
+                  class="h-9 px-2 sm:px-2.5 text-xs sm:text-sm font-medium rounded-lg bg-[var(--bg-primary)] border border-[var(--border-color)] focus:outline-none focus:border-[var(--accent-color)] cursor-pointer"
+                  title="Ir a versículo específico">
+            <option value="">Versículo...</option>
+          </select>
+        </div>
+
+        <button id="btnHeaderNext" type="button"
+                class="p-2 rounded-lg border border-[var(--border-color)] hover:border-[var(--accent-color)] hover:text-[var(--accent-color)] transition disabled:opacity-40 shrink-0"
+                title="Siguiente Capítulo">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Derecha: Buscador + Ajustes (100% VISIBLES EN CELULAR Y PC) + Instalar + Acerca De -->
+      <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+        <!-- Botón Buscador Bíblico (Garantizado visible) -->
+        <button id="btnOpenSearch" type="button"
+                class="p-2 sm:px-3 sm:py-2 rounded-lg border border-[var(--border-color)] bg-[var(--bg-primary)] hover:border-[var(--accent-color)] hover:text-[var(--accent-color)] flex items-center gap-1.5 text-sm font-medium transition shrink-0 shadow-sm"
+                title="Buscar frase exacta o cita bíblica (ej. Juan 3:16) [Ctrl+K]">
+          <svg class="w-5 h-5 text-[var(--accent-color)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <span class="hidden md:inline text-xs font-semibold">Buscar</span>
+          <kbd class="hidden lg:inline-block text-[10px] px-1.5 py-0.5 rounded border border-[var(--border-color)] bg-[var(--bg-surface)] text-[var(--text-muted)] font-mono leading-none">Ctrl+K</kbd>
+        </button>
+
+        <!-- Botón Ajustes de Lectura y Herramientas (Garantizado visible) -->
+        <button id="btnOpenSettings" type="button"
+                class="p-2 sm:px-3 sm:py-2 rounded-lg border border-[var(--border-color)] bg-[var(--bg-primary)] hover:border-[var(--accent-color)] hover:text-[var(--accent-color)] flex items-center gap-1.5 text-sm font-medium transition shrink-0 shadow-sm"
+                title="Ajustes de Lectura y Herramientas">
+          <svg class="w-5 h-5 text-[var(--accent-color)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <span class="hidden md:inline text-xs font-semibold">Ajustes</span>
+        </button>
+
+        <!-- Botón Instalar App (Celular / PC) -->
+        <button id="btnInstallApp" type="button"
+                class="header-install-btn hidden sm:inline-flex p-2 sm:px-3 sm:py-2 rounded-lg border border-[var(--accent-color)] bg-[var(--accent-color)] text-[var(--accent-text)] hover:opacity-90 items-center gap-1.5 text-xs sm:text-sm font-bold shadow-sm transition shrink-0"
+                title="Instalar Santa Biblia RVG2010 en tu celular o PC">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+          <span id="headerInstallBtnText">Instalar</span>
+        </button>
+
+        <!-- Botón Acerca De -->
+        <button id="btnOpenAbout" type="button"
+                class="hidden md:inline-flex p-2 rounded-lg border border-[var(--border-color)] hover:border-[var(--accent-color)] hover:text-[var(--accent-color)] text-sm transition shrink-0"
+                title="Acerca de y Créditos Legales">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       ÁREA PRINCIPAL DE LECTURA (ERGONÓMICA)
+       ====================================================================== -->
+  <main class="flex-1 flex flex-col">
+    <article id="readerContent" class="reader-container">
+      
+      <!-- Encabezado del Capítulo Actual -->
+      <header class="chapter-heading">
+        <span id="currentTestamentBadge" class="testament-badge">Antiguo Testamento</span>
+        <h1 id="currentBookTitle">Génesis 1</h1>
+        <p id="currentVersionSub" class="text-xs uppercase tracking-widest text-[var(--text-muted)] font-semibold mt-1">Reina Valera Gómez (RVG 2010)</p>
+      </header>
+
+
+      <!-- Contenedor dinámico de versículos -->
+      <div id="bibleTextBody" class="mode-paragraph">
+        <!-- Renderizado por app.js -->
+        <div class="text-center py-12 text-[var(--text-muted)]">
+          Cargando texto bíblico...
+        </div>
+      </div>
+
+      <!-- Barra de navegación inferior -->
+      <nav class="chapter-nav-bar" aria-label="Navegación entre capítulos">
+        <button id="btnFooterPrev" type="button" class="nav-chapter-btn">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          <span>Capítulo anterior</span>
+        </button>
+
+        <button id="btnFooterIndex" type="button" class="nav-chapter-btn hidden sm:inline-flex">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          <span>Seleccionar Libro</span>
+        </button>
+
+        <button id="btnFooterNext" type="button" class="nav-chapter-btn">
+          <span>Siguiente capítulo</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </nav>
+
+    </article>
+  </main>
+
+  <!-- ======================================================================
+       PIE DE PÁGINA CON AVISO LEGAL Y CRÉDITO
+       ====================================================================== -->
+  <footer class="mt-auto border-t border-[var(--border-color)] bg-[var(--bg-surface)] py-6 px-4 text-xs text-center text-[var(--text-muted)] transition">
+    <div class="max-w-4xl mx-auto space-y-2">
+      <p class="font-medium text-[var(--text-secondary)]">
+        Texto bíblico: Santa Biblia Reina Valera Gómez (RVG) &copy; Humberto Gómez Caballero.
+      </p>
+      <p>
+        Utilizado para distribución y lectura gratuita de acuerdo a los términos oficiales del autor.
+      </p>
+      <p>
+        Sitio oficial: 
+        <a href="http://www.reinavaleragomez.com" target="_blank" rel="noopener noreferrer" 
+           class="underline hover:text-[var(--accent-color)] font-semibold transition">
+          http://www.reinavaleragomez.com
+        </a>
+      </p>
+      <div class="pt-2 border-t border-[var(--border-color)]/60 flex items-center justify-center gap-1.5 text-[11px] text-[var(--text-muted)]">
+        <span>Diseñado por</span>
+        <span class="font-bold text-[var(--text-primary)]">Gerardo Velázquez</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       DRAWER DE NAVEGACIÓN Y LIBROS (IZQUIERDA)
+       ====================================================================== -->
+  <div id="navDrawerBackdrop" class="drawer-backdrop"></div>
+  <aside id="navDrawer" class="drawer left-drawer" aria-label="Menú de Navegación Bíblica">
+    <div class="p-4 border-b border-[var(--border-color)] flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-[var(--accent-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+        <h2 class="text-lg font-bold">Navegación Bíblica</h2>
+      </div>
+      <button id="btnCloseNav" class="p-1.5 rounded-lg hover:bg-[var(--bg-surface)] text-[var(--text-muted)] hover:text-[var(--text-primary)] transition" title="Cerrar índice">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Pestañas de Testamentos -->
+    <div class="px-4 pt-3 pb-2 border-b border-[var(--border-color)] flex gap-1">
+      <button id="tabTestamentAll" class="nav-tab flex-1 py-1.5 text-xs font-semibold rounded-md bg-[var(--bg-surface)] border border-[var(--border-color)] transition active-tab" data-filter="ALL">
+        Todos (66)
+      </button>
+      <button id="tabTestamentAT" class="nav-tab flex-1 py-1.5 text-xs font-semibold rounded-md border border-[var(--border-color)] transition opacity-70 hover:opacity-100" data-filter="AT">
+        Antiguo (39)
+      </button>
+      <button id="tabTestamentNT" class="nav-tab flex-1 py-1.5 text-xs font-semibold rounded-md border border-[var(--border-color)] transition opacity-70 hover:opacity-100" data-filter="NT">
+        Nuevo (27)
+      </button>
+    </div>
+
+    <!-- Buscador rápido de libros -->
+    <div class="p-3 border-b border-[var(--border-color)]">
+      <div class="relative">
+        <input type="text" id="bookSearchInput" placeholder="Filtrar libro (ej. Juan, Génesis, Salmos)..."
+               class="w-full pl-8 pr-3 py-1.5 text-sm rounded-lg bg-[var(--bg-surface)] border border-[var(--border-color)] focus:outline-none focus:border-[var(--accent-color)] transition">
+        <svg class="w-4 h-4 absolute left-2.5 top-2.5 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </div>
+      <div class="mt-2 flex items-center justify-between text-xs">
+        <span class="text-[var(--text-muted)]">¿Buscar texto o citas?</span>
+        <button id="btnDrawerOpenSearch" type="button" class="text-[var(--accent-color)] font-semibold hover:underline flex items-center gap-1">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <span>Abrir Buscador Bíblico</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Lista de Libros y Capítulos -->
+    <div class="flex-1 overflow-y-auto p-4 space-y-4">
+      <!-- Selector activo de Libro/Capítulo -->
+      <div id="drawerSelectionSteps">
+        <!-- Paso 1: Lista de Libros -->
+        <div id="stepBooksList">
+          <p class="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-2">Selecciona un Libro:</p>
+          <div id="booksGrid" class="grid grid-cols-2 gap-1.5">
+            <!-- Rellenado por app.js -->
+          </div>
+        </div>
+
+        <!-- Paso 2: Selector de Capítulos (se activa al pulsar un libro) -->
+        <div id="stepChaptersList" class="hidden">
+          <div class="flex items-center justify-between mb-3">
+            <button id="btnBackToBooks" class="text-xs font-semibold flex items-center gap-1 text-[var(--accent-color)] hover:underline">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+              Volver a libros
+            </button>
+            <span id="selectedBookNameDisplay" class="text-sm font-bold">Génesis</span>
+          </div>
+          <p class="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-2">Selecciona el Capítulo:</p>
+          <div id="chaptersGrid" class="grid grid-cols-5 gap-1.5">
+            <!-- Rellenado por app.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ======================================================================
+       DRAWER DE CONFIGURACIÓN Y PERSONALIZACIÓN DE LECTURA (DERECHA)
+       ====================================================================== -->
+  <div id="settingsDrawerBackdrop" class="drawer-backdrop"></div>
+  <aside id="settingsDrawer" class="drawer" aria-label="Panel de Ajustes de Lectura">
+    <!-- Encabezado de Configuración -->
+    <div class="p-4 border-b border-[var(--border-color)] flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-[var(--accent-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+        </svg>
+        <h2 class="text-lg font-bold">Ajustes de Lectura</h2>
+      </div>
+      <button id="btnCloseSettings" class="p-1.5 rounded-lg hover:bg-[var(--bg-surface)] text-[var(--text-muted)] hover:text-[var(--text-primary)] transition" title="Cerrar ajustes (Esc)">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Opciones de Configuración -->
+    <div class="flex-1 overflow-y-auto p-4 space-y-6">
+
+      <!-- SECCIÓN A: 10 TEMAS DE COLOR (DESPLEGABLE) -->
+      <section class="rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] overflow-hidden">
+        <button id="btnToggleThemes" type="button" 
+                class="w-full p-3 flex items-center justify-between text-left hover:bg-[var(--bg-primary)]/60 transition cursor-pointer select-none group" 
+                aria-expanded="false" 
+                aria-controls="themesCollapseContainer">
+          <div class="flex items-center gap-2.5 min-w-0">
+            <span id="currentThemeDot" class="w-4 h-4 rounded-full border border-black/15 shrink-0 shadow-sm transition-colors" style="background:#991b1b;"></span>
+            <div class="truncate">
+              <span class="block text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] leading-tight">
+                Temas de Color (10)
+              </span>
+              <span id="currentThemeLabel" class="text-sm font-semibold text-[var(--accent-color)] truncate block">
+                1. Luz Clásico
+              </span>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5 text-xs text-[var(--text-muted)] group-hover:text-[var(--text-primary)] transition shrink-0 ml-2">
+            <span id="themesToggleText" class="font-medium">Cambiar</span>
+            <svg id="themesChevron" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+        </button>
+        
+        <div id="themesCollapseContainer" class="hidden border-t border-[var(--border-color)] p-3 bg-[var(--bg-primary)]/40 transition-all">
+          <p class="text-[11px] text-[var(--text-muted)] mb-2.5">Toca un tema para activarlo inmediatamente:</p>
+          <div id="themesGrid" class="grid grid-cols-2 gap-2 text-xs">
+            <!-- 1. Luz Clásico -->
+            <button type="button" data-theme-target="luz-clasico" class="theme-swatch p-2.5 rounded-lg border flex items-center gap-2 text-left" style="background:#ffffff; color:#1a1a1a;">
+              <span class="w-4 h-4 rounded-full border border-gray-300 shrink-0" style="background:#991b1b;"></span>
+              <span class="font-medium truncate">1. Luz Clásico</span>
+            </button>
+            
+            <!-- 2. Sepia Pergamino -->
+            <button type="button" data-theme-target="sepia-pergamino" class="theme-swatch p-2.5 rounded-lg border flex items-center gap-2 text-left" style="background:#fbf0d9; color:#433422; border-color:#e5d3b0;">
+              <span class="w-4 h-4 rounded-full border border-[#d6be96] shrink-0" style="background:#8b4513;"></span>
+              <span class="font-medium truncate">2. Sepia Pergamino</span>
+            </button>
+
+            <!-- 3. Noche Oscuro -->
+            <button type="button" data-theme-target="noche-oscuro" class="theme-swatch p-2.5 rounded-lg border flex items-center gap-2 text-left" style="background:#18181b; color:#e4e4e7; border-color:#3f3f46;">
+              <span class="w-4 h-4 rounded-full shrink-0" style="background:#60a5fa;"></span>
+              <span class="font-medium truncate">3. Noche Oscuro</span>
+            </button>
+
+            <!-- 4. OLED / Negro Puro -->
+            <button type="button" data-theme-target="oled-negro" class="theme-swatch p-2.5 rounded-lg border flex items-center gap-2 text-left" style="background:#000000; color:#d1d5db; border-color:#262626;">
+              <span class="w-4 h-4 rounded-full shrink-0" style="background:#38bdf8;"></span>
+              <span class="font-medium truncate">4. OLED Negro</span>
+            </button>
+
+            <!-- 5. Bosque / Salvia -->
+            <button type="button" data-theme-target="bosque-salvia" class="theme-swatch p-2.5 rounded-lg border flex items-center gap-2 text-left" style="background:#f0f4f1; color:#1b382b; border-color:#cad8ce;">
+              <span class="w-4 h-4 rounded-full shrink-0" style="background:#2d6a4f;"></span>
+              <span class="font-medium truncate">5. Bosque Salvia</span>
+            </button>
+
+            <!-- 6. Azul Medianoche -->
+            <button type="button" data-theme-target="azul-medianoche" class="theme-swatch p-2.5 rounded-lg border flex items-center gap-2 text-left" style="background:#0f172a; color:#cbd5e1; border-color:#334155;">
+              <span class="w-4 h-4 rounded-full shrink-0" style="background:#38bdf8;"></span>
+              <span class="font-medium truncate">6. Azul Medianoche</span>
+            </button>
+
+            <!-- 7. Papel Café / Desierto -->
+            <button type="button" data-theme-target="papel-cafe" class="theme-swatch p-2.5 rounded-lg border flex items-center gap-2 text-left" style="background:#f5ebe0; color:#3e2723; border-color:#d7bead;">
+              <span class="w-4 h-4 rounded-full shrink-0" style="background:#a2673f;"></span>
+              <span class="font-medium truncate">7. Papel Café</span>
+            </button>
+
+            <!-- 8. Lavanda Crepúsculo -->
+            <button type="button" data-theme-target="lavanda-crepusculo" class="theme-swatch p-2.5 rounded-lg border flex items-center gap-2 text-left" style="background:#1e1b2e; color:#e9d5ff; border-color:#433962;">
+              <span class="w-4 h-4 rounded-full shrink-0" style="background:#c084fc;"></span>
+              <span class="font-medium truncate">8. Lavanda Crepúsculo</span>
+            </button>
+
+            <!-- 9. Monocromo Retro -->
+            <button type="button" data-theme-target="monocromo-retro" class="theme-swatch p-2.5 rounded-lg border flex items-center gap-2 text-left" style="background:#f4efe6; color:#24201d; border-color:#cfc5b3;">
+              <span class="w-4 h-4 rounded-full shrink-0" style="background:#8c5d31;"></span>
+              <span class="font-medium truncate">9. Prensa Vintage</span>
+            </button>
+
+            <!-- 10. Café Moca -->
+            <button type="button" data-theme-target="cafe-moca" class="theme-swatch p-2.5 rounded-lg border flex items-center gap-2 text-left" style="background:#2b211b; color:#f5ebd9; border-color:#524035;">
+              <span class="w-4 h-4 rounded-full shrink-0" style="background:#d4a373;"></span>
+              <span class="font-medium truncate">10. Café Moca</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN B: 50 TIPOGRAFÍAS DE LECTURA -->
+      <section>
+        <div class="flex items-center justify-between mb-2">
+          <label for="selectFontFamily" class="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
+            Tipografía de Lectura (50)
+          </label>
+          <span class="text-[10px] font-semibold text-[var(--accent-color)] bg-[var(--accent-color)]/10 px-2 py-0.5 rounded-full">50 Opciones</span>
+        </div>
+        <select id="selectFontFamily" class="w-full px-3 py-2 text-sm rounded-lg bg-[var(--bg-surface)] border border-[var(--border-color)] focus:outline-none focus:border-[var(--accent-color)] cursor-pointer font-medium">
+          <optgroup label="── 1. Bíblicas y Litúrgicas Clásicas ──">
+            <option value="font-merriweather" class="font-merriweather">1. Merriweather (Serif clásica)</option>
+            <option value="font-lora" class="font-lora">2. Lora (Serif caligráfica)</option>
+            <option value="font-eb-garamond" class="font-eb-garamond">3. EB Garamond (Serif bíblica tradicional)</option>
+            <option value="font-cinzel" class="font-cinzel">4. Cinzel (Estilo epigráfico romano)</option>
+            <option value="font-noto-serif" class="font-noto-serif">5. Noto Serif (Serif universal)</option>
+            <option value="font-cormorant" class="font-cormorant">6. Cormorant Garamond (Serif solemne)</option>
+            <option value="font-playfair" class="font-playfair">7. Playfair Display (Serif editorial)</option>
+            <option value="font-cinzel-decorative" class="font-cinzel-decorative">8. Cinzel Decorative (Litúrgica ornamental)</option>
+            <option value="font-unifraktur" class="font-unifraktur">9. UnifrakturMaguntia (Gótica medieval)</option>
+            <option value="font-medievalsharp" class="font-medievalsharp">10. MedievalSharp (Manuscrito medieval)</option>
+          </optgroup>
+          <optgroup label="── 2. Serif Literarias y Editoriales ──">
+            <option value="font-baskervville" class="font-baskervville">11. Baskervville (Transicional inglesa)</option>
+            <option value="font-spectral" class="font-spectral">12. Spectral (Lectura en pantalla)</option>
+            <option value="font-alegreya" class="font-alegreya">13. Alegreya (Dinámica y poética)</option>
+            <option value="font-libre-baskerville" class="font-libre-baskerville">14. Libre Baskerville (Imprenta clásica)</option>
+            <option value="font-cardo" class="font-cardo">15. Cardo (Estudios bíblicos)</option>
+            <option value="font-crimson-text" class="font-crimson-text">16. Crimson Text (Editorial humanista)</option>
+            <option value="font-gentium-plus" class="font-gentium-plus">17. Gentium Plus (Lingüística erudita)</option>
+            <option value="font-vollkorn" class="font-vollkorn">18. Vollkorn (Robusta y legible)</option>
+            <option value="font-faustina" class="font-faustina">19. Faustina (Editorial latinoamericana)</option>
+            <option value="font-prata" class="font-prata">20. Prata (Didot y elegancia clásica)</option>
+          </optgroup>
+          <optgroup label="── 3. Sans-Serif Modernas y Limpias ──">
+            <option value="font-inter" class="font-inter">21. Inter (Moderna y neutra)</option>
+            <option value="font-roboto" class="font-roboto">22. Roboto (Limpia y versátil)</option>
+            <option value="font-open-sans" class="font-open-sans">23. Open Sans (Equilibrada)</option>
+            <option value="font-outfit" class="font-outfit">24. Outfit (Geométrica moderna)</option>
+            <option value="font-lato" class="font-lato">25. Lato (Cálida y balanceada)</option>
+            <option value="font-montserrat" class="font-montserrat">26. Montserrat (Geométrica urbana)</option>
+            <option value="font-poppins" class="font-poppins">27. Poppins (Geométrica amigable)</option>
+            <option value="font-source-sans" class="font-source-sans">28. Source Sans 3 (Adobe editorial)</option>
+            <option value="font-raleway" class="font-raleway">29. Raleway (Elegante y estilizada)</option>
+            <option value="font-nunito" class="font-nunito">30. Nunito (Redondeada y suave)</option>
+          </optgroup>
+          <optgroup label="── 4. Sans Humanistas y Amigables ──">
+            <option value="font-pt-sans" class="font-pt-sans">31. PT Sans (Humanista universal)</option>
+            <option value="font-fira-sans" class="font-fira-sans">32. Fira Sans (Mozilla legible)</option>
+            <option value="font-work-sans" class="font-work-sans">33. Work Sans (Optimizada para pantalla)</option>
+            <option value="font-rubik" class="font-rubik">34. Rubik (Bordes suaves)</option>
+            <option value="font-quicksand" class="font-quicksand">35. Quicksand (Cómoda y moderna)</option>
+            <option value="font-cabin" class="font-cabin">36. Cabin (Humanista equilibrada)</option>
+            <option value="font-karla" class="font-karla">37. Karla (Grotesque natural)</option>
+            <option value="font-dm-sans" class="font-dm-sans">38. DM Sans (Minimalista)</option>
+            <option value="font-urbanist" class="font-urbanist">39. Urbanist (Contemporánea)</option>
+            <option value="font-manrope" class="font-manrope">40. Manrope (Semi-geométrica clara)</option>
+          </optgroup>
+          <optgroup label="── 5. Monospace y Precisión ──">
+            <option value="font-jetbrains" class="font-jetbrains">41. JetBrains Mono (Monospace técnico)</option>
+            <option value="font-fira-code" class="font-fira-code">42. Fira Code (Código y precisión)</option>
+            <option value="font-source-code" class="font-source-code">43. Source Code Pro (Monospace limpio)</option>
+            <option value="font-space-mono" class="font-space-mono">44. Space Mono (Retro-futurista)</option>
+            <option value="font-inconsolata" class="font-inconsolata">45. Inconsolata (Monospace humanista)</option>
+          </optgroup>
+          <optgroup label="── 6. Fuentes Clásicas del Sistema ──">
+            <option value="font-georgia-sys" class="font-georgia-sys">46. Georgia (Sistema Serif)</option>
+            <option value="font-palatino-sys" class="font-palatino-sys">47. Palatino (Sistema Clásica)</option>
+            <option value="font-times-sys" class="font-times-sys">48. Times New Roman (Sistema Tradicional)</option>
+            <option value="font-baskerville-sys" class="font-baskerville-sys">49. Baskerville (Sistema Británica)</option>
+            <option value="font-segoe-sys" class="font-segoe-sys">50. Segoe UI (Sistema Windows)</option>
+          </optgroup>
+        </select>
+        <p class="mt-1 text-xs text-[var(--text-muted)] italic">Tipografía optimizada para lectura prolongada y nitidez.</p>
+      </section>
+
+      <!-- SECCIÓN C: ESTILO Y GROSOR DE FUENTE -->
+      <section class="rounded-xl border border-[var(--border-color)] bg-[var(--bg-surface)] overflow-hidden">
+        <button id="btnToggleFontStyles" type="button" 
+                class="w-full p-3 flex items-center justify-between text-left hover:bg-[var(--bg-primary)]/60 transition cursor-pointer select-none group" 
+                aria-expanded="false" 
+                aria-controls="fontStylesCollapseContainer">
+          <div class="flex items-center gap-2.5 min-w-0">
+            <span class="w-6 h-6 rounded-md bg-[var(--accent-color)]/10 text-[var(--accent-color)] font-bold text-xs flex items-center justify-center shrink-0">Aa</span>
+            <div class="truncate">
+              <span class="block text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] leading-tight">
+                Estilo de Letra
+              </span>
+              <span id="fontStyleCurrentLabel" class="text-sm font-semibold text-[var(--accent-color)] truncate block">
+                Normal
+              </span>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5 text-xs text-[var(--text-muted)] group-hover:text-[var(--text-primary)] transition shrink-0 ml-2">
+            <span id="fontStylesToggleText" class="font-medium">Cambiar</span>
+            <svg id="fontStylesChevron" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+        </button>
+        
+        <div id="fontStylesCollapseContainer" class="hidden border-t border-[var(--border-color)] p-3 bg-[var(--bg-primary)]/40 transition-all">
+          <p class="text-[11px] text-[var(--text-muted)] mb-2.5">Muestra actual: <span id="currentFontStyleSample" class="font-semibold text-[var(--text-primary)]">En el principio creó Dios los cielos</span></p>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <button type="button" data-font-style-target="normal" class="font-style-btn p-2.5 rounded-lg flex items-center justify-center gap-1 font-normal">
+              <span>Aa</span> <span>Normal</span>
+            </button>
+            <button type="button" data-font-style-target="italic" class="font-style-btn p-2.5 rounded-lg flex items-center justify-center gap-1 italic">
+              <span>Aa</span> <span>Cursiva</span>
+            </button>
+            <button type="button" data-font-style-target="semibold" class="font-style-btn p-2.5 rounded-lg flex items-center justify-center gap-1 font-semibold">
+              <span>Aa</span> <span>Seminegrita</span>
+            </button>
+            <button type="button" data-font-style-target="bold" class="font-style-btn p-2.5 rounded-lg flex items-center justify-center gap-1 font-bold">
+              <span>Aa</span> <span>Negrita</span>
+            </button>
+            <button type="button" data-font-style-target="bold-italic" class="font-style-btn p-2.5 rounded-lg flex items-center justify-center gap-1 font-bold italic">
+              <span>Aa</span> <span>Negrita Cursiva</span>
+            </button>
+            <button type="button" data-font-style-target="light" class="font-style-btn p-2.5 rounded-lg flex items-center justify-center gap-1 font-light">
+              <span>Aa</span> <span>Ligera</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN D: TAMAÑO E INTERLINEADO -->
+      <section class="space-y-4">
+        <!-- Tamaño de texto -->
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">Tamaño de Texto</span>
+            <span id="fontSizeDisplay" class="text-xs font-bold text-[var(--accent-color)]">19 px</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <button id="btnFontDec" type="button" class="w-9 h-9 rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] font-bold text-sm hover:border-[var(--accent-color)] flex items-center justify-center transition" title="Reducir tamaño">
+              A-
+            </button>
+            <input type="range" id="fontSizeSlider" min="14" max="32" value="19" step="1" 
+                   class="flex-1 accent-[var(--accent-color)] cursor-pointer" title="Desliza para cambiar tamaño">
+            <button id="btnFontInc" type="button" class="w-9 h-9 rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] font-bold text-base hover:border-[var(--accent-color)] flex items-center justify-center transition" title="Aumentar tamaño">
+              A+
+            </button>
+          </div>
+        </div>
+
+        <!-- Interlineado -->
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">Interlineado</span>
+            <span id="lineHeightDisplay" class="text-xs font-bold text-[var(--accent-color)]">1.7</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="btnLineHeightDec" type="button" class="w-9 h-9 rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] font-bold text-base hover:border-[var(--accent-color)] flex items-center justify-center transition shrink-0" title="Disminuir interlineado">
+              -
+            </button>
+            <input type="range" id="lineHeightSlider" min="0.8" max="2.6" value="1.7" step="0.05" 
+                   class="flex-1 accent-[var(--accent-color)] cursor-pointer" title="Desliza para cambiar interlineado">
+            <button id="btnLineHeightInc" type="button" class="w-9 h-9 rounded-lg border border-[var(--border-color)] bg-[var(--bg-surface)] font-bold text-base hover:border-[var(--accent-color)] flex items-center justify-center transition shrink-0" title="Aumentar interlineado">
+              +
+            </button>
+          </div>
+          <div class="flex justify-between text-[10px] text-[var(--text-muted)] mt-1 font-medium px-1">
+            <span>Compacto (1.2)</span>
+            <span>Estándar (1.7)</span>
+            <span>Espacioso (2.4)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN E: MODOS DE DISPOSICIÓN -->
+      <section>
+        <label class="block text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] mb-2">
+          Disposición de Versículos
+        </label>
+        <div class="grid grid-cols-2 gap-2">
+          <button id="btnLayoutParagraph" type="button" class="p-3 rounded-lg border border-[var(--border-color)] text-left hover:border-[var(--accent-color)] transition">
+            <div class="flex items-center gap-1.5 font-semibold text-xs mb-1">
+              <svg class="w-4 h-4 text-[var(--accent-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h12"/>
+              </svg>
+              <span>Párrafo Continuo</span>
+            </div>
+            <p class="text-[11px] text-[var(--text-muted)] leading-tight">Flujo continuo con superíndices, ideal para lectura fluida.</p>
+          </button>
+
+          <button id="btnLayoutLines" type="button" class="p-3 rounded-lg border border-[var(--border-color)] text-left hover:border-[var(--accent-color)] transition">
+            <div class="flex items-center gap-1.5 font-semibold text-xs mb-1">
+              <svg class="w-4 h-4 text-[var(--accent-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+              </svg>
+              <span>Línea por Línea</span>
+            </div>
+            <p class="text-[11px] text-[var(--text-muted)] leading-tight">Cada versículo en renglón separado para estudio y memorización.</p>
+          </button>
+        </div>
+      </section>
+
+      <!-- SECCIÓN F: HERRAMIENTAS Y OPCIONES ADICIONALES -->
+      <section class="space-y-3 pt-2 border-t border-[var(--border-color)]">
+        <label class="block text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">
+          Herramientas y Opciones
+        </label>
+
+        <!-- Toggle Mostrar/Ocultar Números de Versículo -->
+        <label class="flex items-center justify-between p-2.5 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-color)] cursor-pointer">
+          <div class="pr-2">
+            <span class="text-xs font-semibold block">Números de versículo</span>
+            <span class="text-[11px] text-[var(--text-muted)]">Muestra u oculta la numeración en el texto</span>
+          </div>
+          <input type="checkbox" id="toggleVerseNumbers" checked class="w-4 h-4 accent-[var(--accent-color)] cursor-pointer shrink-0">
+        </label>
+
+        <!-- Toggle Títulos Bíblicos Reina Valera 1960 -->
+        <label class="flex items-center justify-between p-2.5 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-color)] cursor-pointer">
+          <div class="pr-2">
+            <span class="text-xs font-semibold block">Títulos y subtítulos bíblicos</span>
+            <span class="text-[11px] text-[var(--text-muted)]">Encabezados de pasajes (Reina Valera 1960)</span>
+          </div>
+          <input type="checkbox" id="toggleBibleTitles" checked class="w-4 h-4 accent-[var(--accent-color)] cursor-pointer shrink-0">
+        </label>
+
+        <!-- Toggle Resaltar Citas en Negrita -->
+        <label class="flex items-center justify-between p-2.5 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-color)] cursor-pointer">
+          <div class="pr-2">
+            <span class="text-xs font-semibold block">Resaltar citas del Antiguo Testamento</span>
+            <span class="text-[11px] text-[var(--text-muted)]">En negrita en el Nuevo Testamento</span>
+          </div>
+          <input type="checkbox" id="toggleHighlightQuotes" checked class="w-4 h-4 accent-[var(--accent-color)] cursor-pointer shrink-0">
+        </label>
+
+        <!-- Toggle Palabras de Jesús en Rojo -->
+        <label class="flex items-center justify-between p-2.5 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-color)] cursor-pointer">
+          <div class="pr-2">
+            <span class="text-xs font-semibold block">Palabras de Jesús en rojo</span>
+            <span class="text-[11px] text-[var(--text-muted)]">Edición con letra roja en Evangelios y Hechos</span>
+          </div>
+          <input type="checkbox" id="toggleJesusWords" checked class="w-4 h-4 accent-[var(--accent-color)] cursor-pointer shrink-0">
+        </label>
+
+        <!-- Toggle Modo Diccionario RAE -->
+        <label class="flex items-center justify-between p-2.5 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-color)] cursor-pointer">
+          <div class="pr-2">
+            <span class="text-xs font-semibold block text-[var(--accent-color)]">Modo Diccionario RAE</span>
+            <span class="text-[11px] text-[var(--text-muted)]">Toca cualquier palabra del texto para ver su significado en la RAE</span>
+          </div>
+          <input type="checkbox" id="toggleRaeModeSetting" class="w-4 h-4 accent-[var(--accent-color)] cursor-pointer shrink-0">
+        </label>
+
+        <!-- Selector de Alineación -->
+        <div class="flex items-center justify-between p-2.5 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-color)]">
+          <span class="text-xs font-semibold">Alineación del texto</span>
+          <div class="flex items-center gap-1">
+            <button id="btnAlignLeft" type="button" class="px-2.5 py-1 text-xs rounded border border-[var(--border-color)] bg-[var(--bg-primary)] font-semibold transition" title="Alinear a la izquierda">
+              Izquierda
+            </button>
+            <button id="btnAlignJustify" type="button" class="px-2.5 py-1 text-xs rounded border border-[var(--border-color)] opacity-70 hover:opacity-100 font-semibold transition" title="Justificar texto">
+              Justificado
+            </button>
+          </div>
+        </div>
+
+        <!-- Botón Restablecer Ajustes -->
+        <button id="btnResetSettings" type="button" class="w-full py-2.5 text-xs font-semibold rounded-lg border border-[var(--border-color)] hover:border-red-500 hover:text-red-500 transition text-[var(--text-muted)] mt-2">
+          Restablecer Valores Predeterminados
+        </button>
+      </section>
+
+    </div>
+  </aside>
+
+  <!-- ======================================================================
+       MODAL DE BÚSQUEDA BÍBLICA (FRASE EXACTA Y LIBRO CON CAPÍTULO Y VERSÍCULO)
+       ====================================================================== -->
+  <div id="searchModalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+    <div class="modal-card search-modal-card">
+      
+      <!-- Encabezado del Buscador -->
+      <div class="p-4 sm:p-5 border-b border-[var(--border-color)] flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full bg-[var(--accent-color)] text-[var(--accent-text)] flex items-center justify-center font-bold text-sm shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 id="searchModalTitle" class="text-base font-bold leading-tight">Buscador Bíblico RVG2010</h3>
+            <p class="text-xs text-[var(--text-muted)]">Busca por frase exacta o escribe libro, capítulo y versículo (ej. Juan 3:16)</p>
+          </div>
+        </div>
+        <button id="btnCloseSearchModal" class="p-1.5 rounded-lg hover:bg-[var(--bg-surface)] text-[var(--text-muted)] hover:text-[var(--text-primary)] transition" title="Cerrar buscador (Esc)">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Barra de Input de Búsqueda -->
+      <div class="p-4 border-b border-[var(--border-color)] bg-[var(--bg-surface)]/60">
+        <div class="relative flex items-center">
+          <svg class="w-5 h-5 absolute left-3 text-[var(--text-muted)] pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <input type="text" id="bibleSearchInput" 
+                 class="w-full pl-10 pr-20 py-2.5 text-sm sm:text-base rounded-xl bg-[var(--bg-primary)] border border-[var(--border-color)] focus:outline-none focus:border-[var(--accent-color)] shadow-sm transition"
+                 placeholder="Ej. Juan 3:16, de tal manera amó Dios, Salmos 23:1..."
+                 autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+          <button id="btnClearSearch" type="button" 
+                  class="absolute right-2 px-2.5 py-1 text-xs text-[var(--text-muted)] hover:text-[var(--text-primary)] rounded hidden transition" 
+                  title="Limpiar búsqueda">
+            Limpiar
+          </button>
+        </div>
+
+        <!-- Filtros y Opciones Rápidas -->
+        <div class="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs">
+          <!-- Filtro por Ámbito / Testamento -->
+          <div class="flex items-center gap-1" id="searchScopeGroup">
+            <button type="button" data-scope="ALL" class="search-scope-btn px-2.5 py-1 rounded-md border border-[var(--border-color)] bg-[var(--bg-primary)] font-semibold active-scope transition">
+              Toda la Biblia
+            </button>
+            <button type="button" data-scope="AT" class="search-scope-btn px-2.5 py-1 rounded-md border border-[var(--border-color)] opacity-70 hover:opacity-100 transition">
+              Antiguo T.
+            </button>
+            <button type="button" data-scope="NT" class="search-scope-btn px-2.5 py-1 rounded-md border border-[var(--border-color)] opacity-70 hover:opacity-100 transition">
+              Nuevo T.
+            </button>
+            <button type="button" data-scope="BOOK" id="btnScopeCurrentBook" class="search-scope-btn px-2.5 py-1 rounded-md border border-[var(--border-color)] opacity-70 hover:opacity-100 transition">
+              Solo este libro
+            </button>
+          </div>
+
+          <!-- Opciones de Búsqueda -->
+          <div class="flex items-center gap-3">
+            <label class="flex items-center gap-1.5 cursor-pointer text-[var(--text-secondary)] font-medium select-none" title="Buscar la frase exactamente en el orden de palabras ingresado">
+              <input type="checkbox" id="checkExactPhrase" checked class="accent-[var(--accent-color)] cursor-pointer">
+              <span>Frase exacta</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resultados y Estado -->
+      <div id="searchResultsContainer" class="flex-1 overflow-y-auto p-4 space-y-3 min-h-[240px] max-h-[58vh]">
+        <!-- Rellenado por app.js -->
+      </div>
+
+      <!-- Pie del Modal con resumen y ayuda -->
+      <div class="p-3 px-4 bg-[var(--bg-surface)] border-t border-[var(--border-color)] flex items-center justify-between text-xs text-[var(--text-muted)]">
+        <span id="searchResultsCount">Escribe una frase o una cita bíblica para comenzar.</span>
+        <span class="hidden sm:inline text-[11px]">Pulsa <kbd class="px-1.5 py-0.5 border rounded bg-[var(--bg-primary)] font-mono text-[10px]">Enter</kbd> para ir al pasaje</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL DE INFORMACIÓN Y CRÉDITOS LEGALES (ACERCA DE)
+       ====================================================================== -->
+  <div id="aboutModalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="p-5 border-b border-[var(--border-color)] flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full bg-[var(--accent-color)] text-[var(--accent-text)] flex items-center justify-center font-bold text-sm">
+            RVG
+          </div>
+          <div>
+            <h3 id="modalTitle" class="text-base font-bold">Santa Biblia Reina Valera Gómez 2010</h3>
+            <p class="text-xs text-[var(--text-muted)]">Visor de Lectura Digital Local · Diseñado por Gerardo Velázquez</p>
+          </div>
+        </div>
+        <button id="btnCloseAboutModal" class="p-1 rounded-lg hover:bg-[var(--border-color)] text-[var(--text-muted)] hover:text-[var(--text-primary)] transition" title="Cerrar ventana">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="p-6 space-y-4 text-sm leading-relaxed max-h-[70vh] overflow-y-auto">
+        <div class="p-4 rounded-lg bg-[var(--bg-primary)] border-l-4 border-[var(--accent-color)] border border-[var(--border-color)]">
+          <p class="font-bold text-xs uppercase tracking-wider text-[var(--accent-color)] mb-1">Aviso Legal Oficial</p>
+          <p class="font-medium text-[var(--text-primary)]">
+            "Texto bíblico: Santa Biblia Reina Valera Gómez (RVG) &copy; Humberto Gómez Caballero. Utilizado para distribución y lectura gratuita de acuerdo a los términos oficiales del autor."
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1">Sitio Web Oficial del Autor:</h4>
+          <a href="http://www.reinavaleragomez.com" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center gap-1.5 text-[var(--accent-color)] font-semibold underline hover:opacity-80">
+            <span>http://www.reinavaleragomez.com</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="pt-2 border-t border-[var(--border-color)] text-xs text-[var(--text-secondary)] space-y-2">
+          <p class="font-semibold text-[var(--text-primary)]">Características de esta Aplicación Web:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Buscador Bíblico Avanzado:</strong> Búsqueda de frase exacta en los 31,102 versículos y salto directo por libro, capítulo y versículo (ej. Juan 3:16).</li>
+            <li><strong>100% Funcional Offline:</strong> Funciona directamente en tu navegador leyendo desde archivos locales sin depender de conexión a internet.</li>
+            <li><strong>10 Paletas de Colores Ergonómicas:</strong> Diseñadas para descanso visual prolongado (OLED, Sepia Pergamino, Bosque, Noche Oscuro, etc.).</li>
+            <li><strong>10 Fuentes Tipográficas Seleccionadas:</strong> Con compatibilidad Google Fonts y alternativas locales del sistema.</li>
+            <li><strong>Palabras de Jesús en Rojo:</strong> Edición de Letra Roja con 2,010 versículos del Nuevo Testamento destacados y adaptados dinámicamente a cada paleta de color.</li>
+            <li><strong>Modos de lectura configurables:</strong> Párrafo fluido o línea por línea versículo a versículo con memorización en <code class="bg-[var(--border-color)] px-1 rounded">localStorage</code>.</li>
+            <li><strong>Diseño y Desarrollo:</strong> Diseñado por Gerardo Velázquez.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="p-4 bg-[var(--bg-primary)] border-t border-[var(--border-color)] flex items-center justify-between gap-2 flex-wrap">
+        <button id="btnAboutOpenInstaller" type="button" class="px-3.5 py-2 rounded-lg border border-[var(--accent-color)] text-[var(--accent-color)] hover:bg-[var(--accent-color)] hover:text-[var(--accent-text)] font-semibold text-xs flex items-center gap-1.5 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+          <span>Instalar en Celular o PC</span>
+        </button>
+        <button id="btnAckAbout" type="button" class="px-4 py-2 rounded-lg bg-[var(--accent-color)] text-[var(--accent-text)] font-semibold text-xs hover:opacity-90 transition">
+          Entendido y Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL INSTALADOR MULTIPLATAFORMA (CELULAR ANDROID / iOS Y PC)
+       ====================================================================== -->
+  <div id="installModalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="installModalTitle">
+    <div class="modal-card max-w-xl w-[95%]">
+      <!-- Encabezado del Instalador -->
+      <div class="p-4 sm:p-5 border-b border-[var(--border-color)] flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <img src="icons/icon.svg" alt="Icono Santa Biblia RVG2010" class="w-11 h-11 rounded-xl shadow-md shrink-0">
+          <div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <h3 id="installModalTitle" class="text-base sm:text-lg font-bold leading-tight">Instalar Santa Biblia RVG2010</h3>
+              <span id="installStatusBadge" class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[var(--accent-color)]/15 text-[var(--accent-color)] border border-[var(--accent-color)]/30">
+                Offline · Sin Internet
+              </span>
+            </div>
+            <p class="text-xs text-[var(--text-muted)] mt-0.5">Instala la aplicación en tu celular o computadora con acceso directo</p>
+          </div>
+        </div>
+        <button id="btnCloseInstallModal" type="button" class="p-1.5 rounded-lg hover:bg-[var(--bg-primary)] text-[var(--text-muted)] hover:text-[var(--text-primary)] transition" title="Cerrar instalador (Esc)">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Cuerpo del Instalador -->
+      <div class="p-5 space-y-4 max-h-[72vh] overflow-y-auto text-sm">
+
+        <!-- Bloque de Instalación Directa Automática (cuando el navegador soporta beforeinstallprompt) -->
+        <div id="nativeInstallReadyBox" class="hidden p-4 rounded-xl border-2 border-[var(--accent-color)] bg-[var(--bg-primary)] shadow-sm space-y-3">
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-full bg-[var(--accent-color)] text-[var(--accent-text)] flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-bold text-sm text-[var(--text-primary)]">¡Instalación directa lista para tu dispositivo!</h4>
+              <p class="text-xs text-[var(--text-muted)] mt-0.5">
+                Haz clic en el botón inferior para instalar la Santa Biblia RVG2010 directamente en tu pantalla de inicio o escritorio.
+              </p>
+            </div>
+          </div>
+          <button id="btnModalTriggerNativeInstall" type="button" class="w-full py-2.5 px-4 rounded-xl bg-[var(--accent-color)] text-[var(--accent-text)] font-bold text-sm hover:opacity-95 active:scale-[0.99] flex items-center justify-center gap-2 shadow-md transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            <span>Instalar Aplicación Ahora</span>
+          </button>
+        </div>
+
+        <!-- Aviso cuando ya está instalada -->
+        <div id="alreadyInstalledBox" class="hidden p-3.5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 text-xs flex items-center gap-2.5">
+          <svg class="w-5 h-5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <div>
+            <p class="font-bold text-[var(--text-primary)]">La aplicación ya se encuentra instalada en este dispositivo</p>
+            <p class="text-[var(--text-muted)]">Puedes abrirla desde tu pantalla de inicio o escritorio incluso sin conexión a internet.</p>
+          </div>
+        </div>
+
+        <!-- Pestañas de Plataforma (Android, iPhone/iPad, PC) -->
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-2">Selecciona tu dispositivo:</p>
+          <div class="grid grid-cols-3 gap-1.5" role="tablist">
+            <button type="button" data-install-tab="android" class="install-tab-btn py-2 px-2 rounded-lg border border-[var(--border-color)] bg-[var(--bg-primary)] text-xs font-bold flex items-center justify-center gap-1.5 transition">
+              <span>📱</span>
+              <span>Android</span>
+            </button>
+            <button type="button" data-install-tab="ios" class="install-tab-btn py-2 px-2 rounded-lg border border-[var(--border-color)] bg-[var(--bg-primary)] text-xs font-bold flex items-center justify-center gap-1.5 transition">
+              <span>🍎</span>
+              <span>iPhone / iPad</span>
+            </button>
+            <button type="button" data-install-tab="pc" class="install-tab-btn py-2 px-2 rounded-lg border border-[var(--border-color)] bg-[var(--bg-primary)] text-xs font-bold flex items-center justify-center gap-1.5 transition">
+              <span>💻</span>
+              <span>PC / Laptop</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Panel 1: Celular Android -->
+        <div id="installPanelAndroid" class="install-platform-panel space-y-3 p-4 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-color)]">
+          <div class="flex items-center justify-between">
+            <h4 class="font-bold text-sm text-[var(--text-primary)] flex items-center gap-2">
+              <span>📱 Cómo instalar en Celular Android</span>
+            </h4>
+            <span class="text-[11px] font-semibold text-[var(--accent-color)]">Chrome · Edge · Samsung</span>
+          </div>
+          <ol class="space-y-2.5 text-xs text-[var(--text-secondary)]">
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-[var(--accent-color)] text-[var(--accent-text)] font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">1</span>
+              <span>Si aparece el botón <strong>«Instalar Aplicación Ahora»</strong> arriba, tócalo y confirma en <strong>«Instalar»</strong>.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-[var(--accent-color)] text-[var(--accent-text)] font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">2</span>
+              <span>O bien, toca el menú de tres puntos <strong>(⋮)</strong> en la esquina superior derecha de tu navegador.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-[var(--accent-color)] text-[var(--accent-text)] font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">3</span>
+              <span>Selecciona <strong>«Instalar aplicación»</strong> o <strong>«Agregar a la pantalla principal»</strong>. ¡Listo! Verás el icono de <strong>Biblia RVG2010</strong> junto a tus demás apps.</span>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Panel 2: iPhone / iPad (iOS) -->
+        <div id="installPanelIos" class="install-platform-panel hidden space-y-3 p-4 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-color)]">
+          <div class="flex items-center justify-between">
+            <h4 class="font-bold text-sm text-[var(--text-primary)] flex items-center gap-2">
+              <span>🍎 Cómo instalar en iPhone o iPad</span>
+            </h4>
+            <span class="text-[11px] font-semibold text-[var(--accent-color)]">Safari · Chrome iOS</span>
+          </div>
+          <ol class="space-y-2.5 text-xs text-[var(--text-secondary)]">
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-[var(--accent-color)] text-[var(--accent-text)] font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">1</span>
+              <span>Toca el botón <strong>Compartir</strong> <span class="inline-flex items-center px-1.5 py-0.5 rounded bg-[var(--bg-surface)] border border-[var(--border-color)] font-semibold text-[var(--text-primary)]">⬆️ Compartir</span> en la barra inferior o superior de Safari.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-[var(--accent-color)] text-[var(--accent-text)] font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">2</span>
+              <span>Desliza el menú hacia abajo y selecciona <strong>«Agregar a pantalla de inicio»</strong> (<em>Add to Home Screen</em>) ➕.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-[var(--accent-color)] text-[var(--accent-text)] font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">3</span>
+              <span>Toca <strong>«Agregar»</strong> en la esquina superior derecha. La Biblia se abrirá a pantalla completa y sin internet.</span>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Panel 3: PC / Escritorio (Windows, Mac, Linux) -->
+        <div id="installPanelPc" class="install-platform-panel hidden space-y-3 p-4 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-color)]">
+          <div class="flex items-center justify-between">
+            <h4 class="font-bold text-sm text-[var(--text-primary)] flex items-center gap-2">
+              <span>💻 Cómo instalar en tu PC o Laptop</span>
+            </h4>
+            <span class="text-[11px] font-semibold text-[var(--accent-color)]">Windows · Mac · Linux</span>
+          </div>
+          <ol class="space-y-2.5 text-xs text-[var(--text-secondary)]">
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-[var(--accent-color)] text-[var(--accent-text)] font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">1</span>
+              <span>Si aparece el botón <strong>«Instalar Aplicación Ahora»</strong> arriba, haz clic en él y confirma en <strong>«Instalar»</strong>.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-[var(--accent-color)] text-[var(--accent-text)] font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">2</span>
+              <span>También puedes hacer clic en el icono de instalación <strong>(📥 / 🖥️)</strong> situado en el lado derecho de la <strong>barra de direcciones</strong> (Chrome, Edge o Brave).</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-[var(--accent-color)] text-[var(--accent-text)] font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">3</span>
+              <span>O desde el menú del navegador <strong>(⋮)</strong> → <strong>«Guardar y compartir»</strong> (o <strong>«Aplicaciones»</strong>) → <strong>«Instalar Santa Biblia RVG2010»</strong>. Se creará un acceso directo en tu Escritorio y Menú Inicio.</span>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Ventajas de instalar -->
+        <div class="grid grid-cols-3 gap-2 pt-1 text-center text-[11px]">
+          <div class="p-2.5 rounded-lg bg-[var(--bg-primary)] border border-[var(--border-color)]">
+            <div class="font-bold text-[var(--accent-color)]">⚡ 100% Offline</div>
+            <div class="text-[var(--text-muted)] mt-0.5">Lee los 66 libros sin datos ni Wi-Fi</div>
+          </div>
+          <div class="p-2.5 rounded-lg bg-[var(--bg-primary)] border border-[var(--border-color)]">
+            <div class="font-bold text-[var(--accent-color)]">🖥️ Ventana Propia</div>
+            <div class="text-[var(--text-muted)] mt-0.5">Pantalla completa con icono directo</div>
+          </div>
+          <div class="p-2.5 rounded-lg bg-[var(--bg-primary)] border border-[var(--border-color)]">
+            <div class="font-bold text-[var(--accent-color)]">🔒 Ligera y Segura</div>
+            <div class="text-[var(--text-muted)] mt-0.5">Sin publicidad ni permisos invasivos</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pie del Modal Instalador -->
+      <div class="p-3.5 px-5 bg-[var(--bg-primary)] border-t border-[var(--border-color)] flex items-center justify-between gap-2">
+        <span class="text-[11px] text-[var(--text-muted)]">Compatible con Android, iOS, Windows y Mac</span>
+        <button id="btnAckInstallModal" type="button" class="px-4 py-1.5 rounded-lg bg-[var(--bg-surface)] border border-[var(--border-color)] hover:border-[var(--accent-color)] text-xs font-semibold transition">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       BANNER FLOTANTE DE INVITACIÓN A INSTALAR (CELULAR Y PC)
+       ====================================================================== -->
+  <div id="pwaInstallBanner" class="hidden fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-sm z-45 bg-[var(--bg-surface)] border-2 border-[var(--accent-color)] shadow-2xl rounded-2xl p-3.5 transition-all duration-300" role="region" aria-label="Instalar aplicación">
+    <div class="flex items-center gap-3">
+      <img src="icons/icon.svg" alt="Icono RVG2010" class="w-11 h-11 rounded-xl shadow shrink-0">
+      <div class="flex-1 min-w-0">
+        <p class="font-bold text-xs sm:text-sm text-[var(--text-primary)] truncate">Instalar Santa Biblia RVG2010</p>
+        <p class="text-[11px] text-[var(--text-muted)] leading-snug mt-0.5">
+          Instálala en tu celular o PC para acceso rápido y lectura sin internet.
+        </p>
+      </div>
+      <button id="btnDismissInstallBanner" type="button" class="p-1 text-[var(--text-muted)] hover:text-[var(--text-primary)] rounded-lg transition self-start" title="Cerrar aviso">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="mt-3 flex items-center justify-end gap-2">
+      <button id="btnBannerMoreInfo" type="button" class="px-3 py-1.5 rounded-lg border border-[var(--border-color)] bg-[var(--bg-primary)] hover:border-[var(--accent-color)] text-xs font-semibold transition">
+        Ver pasos
+      </button>
+      <button id="btnBannerInstallNow" type="button" class="px-3.5 py-1.5 rounded-lg bg-[var(--accent-color)] text-[var(--accent-text)] hover:opacity-90 text-xs font-bold flex items-center gap-1.5 shadow-sm transition">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        </svg>
+        <span>Instalar ahora</span>
+      </button>
+    </div>
+  </div>
+
+
+
+  <!-- ======================================================================
+       BARRA FLOTANTE DE ACCIONES PARA VERSÍCULOS SELECCIONADOS
+       (Copiar, Compartir o Enviar a WhatsApp uno o varios versículos)
+       ====================================================================== -->
+  <div id="verseActionBar" class="verse-action-bar hidden fixed bottom-5 left-1/2 -translate-x-1/2 z-40 max-w-lg w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-2xl rounded-2xl p-2.5 sm:p-3 transition-all duration-300" role="toolbar" aria-label="Acciones de versículos seleccionados">
+    <div class="flex items-center justify-between gap-2 border-b border-[var(--border-color)] pb-2 mb-2">
+      <div class="flex items-center gap-2 min-w-0">
+        <span id="verseActionCount" class="inline-flex items-center justify-center min-w-[1.5rem] h-6 px-1.5 rounded-full bg-[var(--accent-color)] text-[var(--accent-text)] text-xs font-bold shrink-0">
+          1
+        </span>
+        <div class="min-w-0">
+          <p id="verseActionCitation" class="font-bold text-xs sm:text-sm text-[var(--text-primary)] truncate">
+            Génesis 1:1
+          </p>
+          <p id="verseActionHint" class="text-[10px] text-[var(--text-muted)] truncate hidden sm:block">
+            Haz clic en otros versículos para agregarlos
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center gap-1 shrink-0">
+        <button id="btnSelectAllVerses" type="button" class="px-2 py-1 text-[11px] font-semibold text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--border-color)] rounded-lg transition" title="Seleccionar todos los versículos del capítulo actual">
+          Seleccionar todo
+        </button>
+        <button id="btnCloseVerseAction" type="button" class="p-1.5 text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--border-color)] rounded-lg transition" title="Deseleccionar versículos (Esc)">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-3 gap-1.5">
+      <!-- Botón Copiar -->
+      <button id="btnCopySelectedVerses" type="button" class="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[var(--bg-primary)] hover:bg-[var(--border-subtle)] text-[var(--text-primary)] border border-[var(--border-color)] font-semibold text-xs sm:text-sm transition active:scale-95 shadow-sm" title="Copiar versículos con su cita bíblica">
+        <svg class="w-4 h-4 text-[var(--accent-color)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+        </svg>
+        <span>Copiar</span>
+      </button>
+
+      <!-- Botón WhatsApp -->
+      <button id="btnWhatsappSelectedVerses" type="button" class="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs sm:text-sm transition active:scale-95 shadow-sm" title="Compartir versículos directo por WhatsApp">
+        <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span>WhatsApp</span>
+      </button>
+
+      <!-- Botón Compartir -->
+      <button id="btnShareSelectedVerses" type="button" class="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[var(--accent-color)] hover:opacity-90 text-[var(--accent-text)] font-semibold text-xs sm:text-sm transition active:scale-95 shadow-sm" title="Compartir versículos por otras aplicaciones">
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+        </svg>
+        <span>Compartir</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       BARRA INFERIOR DE ACCESO RÁPIDO PARA CELULARES (MOBILE BOTTOM NAV)
+       Garantiza que en celular el buscador y ajustes estén 100% accesibles y visibles
+       ====================================================================== -->
+  <nav id="mobileBottomNav" class="mobile-bottom-nav md:hidden" aria-label="Navegación móvil rápida">
+    <button id="btnMobileNavIndex" type="button" class="mobile-nav-item" title="Índice de Libros">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+      </svg>
+      <span>Libros</span>
+    </button>
+    <button id="btnMobileNavSearch" type="button" class="mobile-nav-item" title="Buscador Bíblico">
+      <svg class="w-5 h-5 text-[var(--accent-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+      <span class="font-bold text-[var(--accent-color)]">Buscar</span>
+    </button>
+    <button id="btnMobileNavPrev" type="button" class="mobile-nav-item" title="Capítulo Anterior">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+      <span>Anterior</span>
+    </button>
+    <button id="btnMobileNavNext" type="button" class="mobile-nav-item" title="Siguiente Capítulo">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <span>Siguiente</span>
+    </button>
+    <button id="btnMobileNavSettings" type="button" class="mobile-nav-item" title="Ajustes y Herramientas">
+      <svg class="w-5 h-5 text-[var(--accent-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+      </svg>
+      <span class="font-bold text-[var(--accent-color)]">Ajustes</span>
+    </button>
+  </nav>
+
+  <!-- Notificación Toast para avisos rápidos -->
+  <div id="toastNotification" class="fixed bottom-24 sm:bottom-6 right-4 sm:right-6 z-50 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none px-4 py-2.5 rounded-lg shadow-lg text-xs font-semibold bg-[var(--text-primary)] text-[var(--bg-primary)] border border-[var(--border-color)]">
+    <span id="toastMessage">Acción realizada</span>
+  </div>
+  <!-- Base de datos de la Biblia RVG2010 completa (offline inmediata) -->
+  <script src="data/rvg2010.js"></script>
+  <!-- Catálogo de Citas del Antiguo Testamento en el Nuevo Testamento -->
+  <script src="data/bible_quotes.js"></script>
+  <!-- Catálogo de Títulos y Subtítulos de Secciones Bíblicas (Perícopas Reina Valera 1960) -->
+  <script src="data/bible_titles.js"></script>
+  <!-- Código JavaScript de la aplicación -->
+  <script src="app.js?v=20261123_01"></script>
+</body>
+</html>

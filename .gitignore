@@ -1,0 +1,25 @@
+# Dependencias y builds locales
+node_modules/
+**/node_modules/
+.firebase/
+installers/
+packaging/desktop/dist/
+packaging/desktop/www/
+packaging/mobile/android/app/build/
+packaging/mobile/android/build/
+packaging/mobile/android/.gradle/
+packaging/mobile/android/local.properties
+packaging/mobile/android/capacitor-cordova-android-plugins/build/
+packaging/mobile/android/app/src/main/assets/public/
+packaging/www/
+
+# Claves privadas y archivos sensibles
+*.keystore
+*.jks
+*.p12
+.env
+.env.*
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

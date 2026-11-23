@@ -1,0 +1,51 @@
+{
+  "name": "santa-biblia-rvg2010",
+  "version": "1.0.0",
+  "description": "Santa Biblia Reina Valera Gómez 2010 (RVG2010) - Lector 100% offline para PC",
+  "author": "Gerardo Velázquez",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^33.3.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.gerardovelazquez.santabibliarvg2010",
+    "productName": "Santa Biblia RVG2010",
+    "copyright": "Santa Biblia Reina Valera Gómez 2010 - Diseñado por Gerardo Velázquez",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "www/**/*",
+      "icon.ico"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Santa Biblia RVG2010",
+      "installerLanguages": [
+        "es_ES"
+      ],
+      "language": "1034",
+      "artifactName": "Santa-Biblia-RVG2010-Setup-${version}.exe"
+    }
+  }
+}

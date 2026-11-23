@@ -1,0 +1,90 @@
+{
+  "id": "/",
+  "name": "Santa Biblia Reina Valera Gómez 2010 (RVG2010)",
+  "short_name": "Biblia RVG2010",
+  "description": "Lector moderno, accesible y 100% offline de la Santa Biblia Reina Valera Gómez 2010 (RVG2010). Instalable en celular y PC.",
+  "lang": "es",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#faf8f5",
+  "theme_color": "#991b1b",
+  "categories": ["books", "education", "reference"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Buscador Bíblico",
+      "short_name": "Buscar",
+      "description": "Buscar frases exactas o citas en la Biblia RVG2010",
+      "url": "./?action=search",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Nuevo Testamento (Mateo 1)",
+      "short_name": "Nuevo Testamento",
+      "description": "Ir al inicio del Nuevo Testamento",
+      "url": "./?book=Mateo&chapter=1",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Salmos 23",
+      "short_name": "Salmos",
+      "description": "Abrir el libro de los Salmos",
+      "url": "./?book=Salmos&chapter=23",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

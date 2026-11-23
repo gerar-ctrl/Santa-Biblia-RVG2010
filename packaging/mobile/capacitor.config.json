@@ -1,0 +1,12 @@
+{
+  "appId": "com.gerardovelazquez.santabibliarvg2010",
+  "appName": "Biblia RVG2010",
+  "webDir": "../www",
+  "android": {
+    "backgroundColor": "#faf8f5",
+    "allowMixedContent": true
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}
